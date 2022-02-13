@@ -6,7 +6,6 @@ import TeamList from "./TeamList";
 export default () => {
   const [westTeams, setWestTeams] = useState([]);
   const [eastTeams, setEastTeams] = useState([]);
-  const [updateTime, setUpdateTime] = useState(new Date());
 
   const FetchData = () => {
     fetch("/api/standing")
@@ -25,7 +24,6 @@ export default () => {
           } else {
             setWestTeams(teams);
           }
-          setUpdateTime(new Date())
         });
       });
   };
@@ -50,7 +48,6 @@ export default () => {
         <Row>
           <Col>
             <Button onClick={refreshBtnHandler}>Refresh</Button>
-            {updateTime.toLocaleString()}
           </Col>
         </Row>
       </Card>
