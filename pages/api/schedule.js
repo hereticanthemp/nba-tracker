@@ -2,13 +2,14 @@ const dataFormatter = (data) =>
   data.payload.dates.map((d) => ({
     gameCount: d.gamecount,
     games: d.games.map((g) => ({
+      id: g.profile.gameId,
       home: {
         city: g.homeTeam.profile.city,
-        name: g.homeTeam.profile.displayAbr,
+        name: g.homeTeam.profile.displayAbbr,
       },
       away: {
         city: g.awayTeam.profile.city,
-        name: g.awayTeam.profile.displayAbr,
+        name: g.awayTeam.profile.displayAbbr,
       },
       box: {
         home: g.boxscore.homeScore,

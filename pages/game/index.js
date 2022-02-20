@@ -1,13 +1,16 @@
 import Head from "next/head";
+import react, { useEffect, useState } from "react";
 
 import { Card, Calendar } from "antd";
 
 export default function Game() {
+  const [games, setGames] = useState([])
+
   const onChange = (value, mode) => {
     console.log(value.format("YYYY-MM-DD"), mode);
     fetch(`/api/schedule?date=${value.format("YYYY-MM-DD")}`)
     .then(response=>response.json())
-    .then(data=>console.log(data));
+    .then(data=>setGames(data.games));
   };
 
   const cardStyle = {
@@ -25,13 +28,20 @@ export default function Game() {
       </Head>
 
       <main>
-        <h1>Game Today</h1>
+        <h1>Game Schedule</h1>
         <Card style={cardStyle}>
           <Calendar
             fullscreen={false}
             onPanelChange={onChange}
             onSelect={onChange}
           />
+        </Card>
+        <Card>
+          <ul>
+            {games.map(g=>{
+              return <li key={g.id}>{`${g.home.city}${g.home.name} ${g.box.home} vs ${g.box.away} ${g.away.city}${g.away.name}`}</li>
+            })}
+          </ul>
         </Card>
       </main>
     </div>
