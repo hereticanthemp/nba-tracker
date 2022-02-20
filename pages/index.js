@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import 'antd/dist/antd.css';
 import Standing from './components/standing'
 import Leaders from './components/daily_lead_player'
+
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -16,13 +17,10 @@ export default function Home() {
       </Head>
 
       <main>
+        <Link href='/game'>Go to Game detail</Link>
         <Standing></Standing>
         <Leaders></Leaders>
       </main>
-
-      <footer className={styles.footer}>
- 
-      </footer>
     </div>
   )
 }
