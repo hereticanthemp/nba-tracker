@@ -1,6 +1,6 @@
 import Team from "./Team";
 
-export default (props) => {
+const TeamList = (props) => {
   return (
     <ul>
       {props.teams?.map((team) => (
@@ -14,3 +14,5 @@ export default (props) => {
     </ul>
   );
 };
+
+export default TeamList;

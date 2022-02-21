@@ -1,6 +1,6 @@
 import { Menu } from "antd";
 import Link from "next/link";
-export default (props) => {
+const Navigation = (props) => {
   return (
     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
       <Menu.Item key="Home">
@@ -12,3 +12,4 @@ export default (props) => {
     </Menu>
   );
 };
+export default Navigation;

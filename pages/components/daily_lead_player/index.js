@@ -2,7 +2,7 @@ import react, { useEffect, useState } from "react";
 import { Card, Button, Row, Col } from "antd";
 import LeadCol from "./LeadCol";
 
-export default () => {
+const DailyLead = () => {
   const [colData, setColData] = useState([]);
 
   const FetchData = () => {
@@ -37,3 +37,5 @@ export default () => {
     </div>
   );
 };
+
+export default DailyLead;

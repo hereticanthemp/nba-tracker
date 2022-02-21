@@ -3,7 +3,7 @@ import { Card, Button, Row, Col } from "antd";
 
 import TeamList from "./TeamList";
 
-export default () => {
+const Standing = () => {
   const [westTeams, setWestTeams] = useState([]);
   const [eastTeams, setEastTeams] = useState([]);
 
@@ -54,3 +54,5 @@ export default () => {
     </div>
   );
 };
+
+export default Standing;

@@ -1,4 +1,4 @@
-export default (props) => {
+const Team = (props) => {
   return (
     <li>
         {props.abbr}
@@ -8,6 +8,7 @@ export default (props) => {
   );
 };
 
+export default Team;
 /*
 "profile": {
     "abbr": "ATL",

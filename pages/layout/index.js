@@ -1,7 +1,7 @@
 import Navigation from "./navigation";
 import { Layout } from "antd";
 
-export default (props) => {
+const AppLayout = (props) => {
   const { Header, Content, Footer } = Layout;
   return (
     <Layout>
@@ -15,3 +15,4 @@ export default (props) => {
     </Layout>
   );
 };
+export default AppLayout;
