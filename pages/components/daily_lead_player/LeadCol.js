@@ -7,7 +7,7 @@ const LeadCol = (props) => {
 
   return (
     <Col span={4}>
-      <h3>{props.title.replace("Leaders","").toUpperCase()}</h3>
+      <h3>{props.title?.replace("Leaders","").toUpperCase()}</h3>
       <ul>{players}</ul>
     </Col>
   );

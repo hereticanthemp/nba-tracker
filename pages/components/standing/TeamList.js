@@ -11,11 +11,17 @@ const TeamList = (props) => {
       renderItem={(item) => (
         <List.Item>
           <Team
-            key={item.abbr}
+            key={item?.abbr}
             team={item}
             odds={{
-              conf: confOdds.find((o) => o.name.includes(item.name)),
-              champ: champOdds.find((o) => o.name.includes(item.name)),
+              conf: confOdds.find((o) => o.name.includes(item.name)) ?? {
+                name: "",
+                odds: 0,
+              },
+              champ: champOdds.find((o) => o.name.includes(item.name)) ?? {
+                name: "",
+                odds: 0,
+              },
             }}
           ></Team>
         </List.Item>
