@@ -1,10 +1,13 @@
+import { Descriptions } from "antd";
+
 const Team = (props) => {
+  const team = props.team;
   return (
-    <li>
-        {props.abbr}
-        {props.city}
-        {props.name}
-    </li>
+    <Descriptions title={`${team.abbr} ${team.city} ${team.name}`}>
+      <Descriptions.Item label="W/L">{`${team.wins}/${team.losses}`}</Descriptions.Item>
+      <Descriptions.Item label="streak">{team.streak}</Descriptions.Item>
+      <Descriptions.Item label="Odds"></Descriptions.Item>
+    </Descriptions>
   );
 };
 

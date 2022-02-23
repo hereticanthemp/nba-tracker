@@ -1,17 +1,20 @@
 import Team from "./Team";
-
+import { List, Typography } from "antd";
+const { Text } = Typography;
 const TeamList = (props) => {
   return (
-    <ul>
-      {props.teams?.map((team) => (
-        <Team
-          key={team.abbr}
-          abbr={team.abbr}
-          city={team.city}
-          name={team.name}
-        ></Team>
-      ))}
-    </ul>
+    <List
+      header={<Text strong={true}>{props.conference}</Text>}
+      dataSource={props.teams}
+      renderItem={(item) => (
+        <List.Item>
+          <Team
+            key={item.abbr}
+            team={item}
+          ></Team>
+        </List.Item>
+      )}
+    ></List>
   );
 };
 

@@ -11,7 +11,7 @@ const AppLayout = (props) => {
       <Content>
         <main>{props.children}</main>
       </Content>
-      <Footer>2022 Created by Gin Pan</Footer>
+      <Footer>2022 Created by Gin</Footer>
     </Layout>
   );
 };
