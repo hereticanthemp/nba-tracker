@@ -4,7 +4,7 @@ const dataFormatter = (data) => {
 
   const mapper = (obj) => {
     return {
-      name: obj.name[0],
+      name: obj.name[1],
       odds: obj.o,
     };
   };

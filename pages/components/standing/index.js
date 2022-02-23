@@ -22,6 +22,7 @@ const Standing = () => {
               abbr: team.profile.abbr,
               city: team.profile.city,
               name: team.profile.name,
+              nameEn: team.profile.nameEn,
               wins: team.standings.wins,
               losses: team.standings.losses,
               streak: team.standings.streak,

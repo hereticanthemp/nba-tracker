@@ -16,8 +16,8 @@ const Team = (props) => {
   return (
     <Descriptions title={`${team.abbr} ${team.city} ${team.name}`}>
       <Descriptions.Item label="W/L">{`${team.wins}/${team.losses}`}</Descriptions.Item>
-      <Descriptions.Item label="streak">{team.streak}</Descriptions.Item>
-      <Descriptions.Item label="Odds">{`conf:${odds.conf?.odds} champ:${odds.champ?.odds}`}</Descriptions.Item>
+      <Descriptions.Item>{team.streak}</Descriptions.Item>
+      <Descriptions.Item>{`conf:${odds.conf?.odds} champ:${odds.champ?.odds}`}</Descriptions.Item>
     </Descriptions>
   );
 };

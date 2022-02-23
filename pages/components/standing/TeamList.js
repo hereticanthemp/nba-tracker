@@ -14,11 +14,11 @@ const TeamList = (props) => {
             key={item?.abbr}
             team={item}
             odds={{
-              conf: confOdds.find((o) => o.name.includes(item.name)) ?? {
+              conf: confOdds.find((o) => o.name.includes(item.nameEn)) ?? {
                 name: "",
                 odds: 0,
               },
-              champ: champOdds.find((o) => o.name.includes(item.name)) ?? {
+              champ: champOdds.find((o) => o.name.includes(item.nameEn)) ?? {
                 name: "",
                 odds: 0,
               },
