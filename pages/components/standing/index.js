@@ -6,7 +6,10 @@ import TeamList from "./TeamList";
 const Standing = () => {
   const [westTeams, setWestTeams] = useState([]);
   const [eastTeams, setEastTeams] = useState([]);
-  const [odds, setOdds] = useState({});
+
+  const [westOdds, setWestOdd] = useState([]);
+  const [eastOdds, setEastOdd] = useState([]);
+  const [champOdds, setChampOdd] = useState([]);
 
   const FetchData = () => {
     fetch("/api/standing")
@@ -21,7 +24,7 @@ const Standing = () => {
               name: team.profile.name,
               wins: team.standings.wins,
               losses: team.standings.losses,
-              streak: team.standings.streak
+              streak: team.standings.streak,
             }));
           if (group.conference == "Eastern") {
             setEastTeams(teams);
@@ -36,7 +39,9 @@ const Standing = () => {
     fetch("/api/odds")
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
+        setChampOdd(data.championship);
+        setWestOdd(data.western);
+        setEastOdd(data.eastern);
       });
   };
 
@@ -51,10 +56,20 @@ const Standing = () => {
     <Card title="Conference Standing">
       <Row>
         <Col span={12}>
-          <TeamList conference={"Western"} teams={westTeams}></TeamList>
+          <TeamList
+            conference={"Western"}
+            teams={westTeams}
+            confOdds={westOdds}
+            champOdds={champOdds}
+          ></TeamList>
         </Col>
         <Col span={12}>
-          <TeamList conference={"Eastern"} teams={eastTeams}></TeamList>
+          <TeamList
+            conference={"Eastern"}
+            teams={eastTeams}
+            confOdds={eastOdds}
+            champOdds={champOdds}
+          ></TeamList>
         </Col>
       </Row>
       <Divider />

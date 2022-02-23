@@ -2,11 +2,12 @@ import { Descriptions } from "antd";
 
 const Team = (props) => {
   const team = props.team;
+  const odds = props.odds;
   return (
     <Descriptions title={`${team.abbr} ${team.city} ${team.name}`}>
       <Descriptions.Item label="W/L">{`${team.wins}/${team.losses}`}</Descriptions.Item>
       <Descriptions.Item label="streak">{team.streak}</Descriptions.Item>
-      <Descriptions.Item label="Odds"></Descriptions.Item>
+      <Descriptions.Item label="Odds">{`conf:${odds.conf?.odds} champ:${odds.champ?.odds}`}</Descriptions.Item>
     </Descriptions>
   );
 };
