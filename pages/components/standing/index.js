@@ -7,8 +7,6 @@ const Standing = () => {
   const [westTeams, setWestTeams] = useState([]);
   const [eastTeams, setEastTeams] = useState([]);
 
-  const [westOdds, setWestOdd] = useState([]);
-  const [eastOdds, setEastOdd] = useState([]);
   const [champOdds, setChampOdd] = useState([]);
 
   const FetchData = () => {
@@ -37,12 +35,10 @@ const Standing = () => {
   };
 
   const FetchOdds = () => {
-    fetch("/api/odds")
+    fetch("/api/odds2")
       .then((resp) => resp.json())
       .then((data) => {
         setChampOdd(data.championship);
-        setWestOdd(data.western);
-        setEastOdd(data.eastern);
       });
   };
 
@@ -60,7 +56,6 @@ const Standing = () => {
           <TeamList
             conference={"Western"}
             teams={westTeams}
-            confOdds={westOdds}
             champOdds={champOdds}
           ></TeamList>
         </Col>
@@ -68,7 +63,6 @@ const Standing = () => {
           <TeamList
             conference={"Eastern"}
             teams={eastTeams}
-            confOdds={eastOdds}
             champOdds={champOdds}
           ></TeamList>
         </Col>
